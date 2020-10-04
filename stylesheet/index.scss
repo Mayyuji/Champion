@@ -1,0 +1,81 @@
+@import "public";
+@import "mixin";
+
+header {
+    width: 100%;
+    height: 47px;
+    background-color: #004290;
+
+    .header-c {
+        padding: 0 200px;
+        height: 100%;
+        margin: 0 auto;
+
+        .lefticon {
+            padding-top: 15px;
+
+            a {
+                display: block;
+                float: left;
+                width: 20px;
+                height: 20px;
+                padding-right: 8px;
+                @include href-a;
+                color: #fff;
+
+
+            }
+
+            .icon-news {
+                margin-left: 20px;
+            }
+
+            .right {
+                float: right;
+
+                a {
+                    text-align: center;
+                    padding: 0;
+                    display: block;
+                    width: 80px;
+                }
+            }
+        }
+
+    }
+}
+
+.head {
+    text-align: center;
+    height: 177px;
+
+    h1 {
+        display: block;
+        margin: 0 auto;
+        padding: 20px 0;
+        width: 293px;
+        height: 54px;
+        background: url(../images/logo-1.png)center no-repeat;
+        text-indent: -9999px;
+    }
+
+    nav {
+        @include clearBoth;
+        width: 980px;
+        font-size: 24px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+
+        li {
+            padding: 8px 15px;
+            float: left;
+            display: block;
+
+            span {
+                padding: 0 10px;
+                font-size: 24px;
+            }
+        }
+    }
+
+}
