@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -127,12 +128,15 @@ ol,
 li {
   list-style: none; }
 
+body {
+  min-width: 1280px; }
+
 header {
   width: 100%;
   height: 47px;
   background-color: #004290; }
   header .header-c {
-    padding: 0 200px;
+    width: 1280px;
     height: 100%;
     margin: 0 auto; }
     header .header-c .lefticon {
@@ -159,7 +163,7 @@ header {
 
 .head {
   text-align: center;
-  height: 177px; }
+  height: 147px; }
   .head h1 {
     display: block;
     margin: 0 auto;
@@ -187,7 +191,8 @@ header {
       .head nav li:hover {
         color: #535353; }
       .head nav li:hover .sub-menu {
-        display: block; }
+        display: block;
+        z-index: 2; }
       .head nav li span {
         padding: 0 10px;
         font-size: 24px; }
@@ -214,34 +219,180 @@ header {
             font-size: 14px;
             text-align: left; }
 
-.play {
-  overflow: hidden;
-  width: 800px;
-  height: 400px;
-  border: 1px solid #000;
-  margin: 100px auto;
-  /* perspective: 3000px; */
-  position: relative;
-  transform-style: preserve-3d; }
-  .play ul {
-    transform: translateX(-560px) translateZ(-560px);
-    width: 800px;
-    height: 400px;
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
+  width: 1436px;
+  height: 400px; }
+  .swiper-container img,
+  .swiper-wrapper img,
+  .swiper-slide img {
+    width: 100%;
+    height: 100%; }
+  .swiper-container .swiper-pagination span,
+  .swiper-wrapper .swiper-pagination span,
+  .swiper-slide .swiper-pagination span {
+    height: 13px;
+    width: 13px;
+    background-color: #fff; }
+
+.main {
+  width: 1280px;
+  margin: 0 auto; }
+  .main::after {
+    content: "";
+    height: 0;
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden; }
+  .main .recommended {
     position: relative;
-    background-color: red;
-    transform-style: preserve-3d;
-    transition: all .5s linear; }
-    .play ul::after {
+    padding-top: 200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 1123px;
+    height: 1324px;
+    background: url(../images/recommended.jpg) no-repeat;
+    background-origin: border-box; }
+    .main .recommended div {
+      float: left; }
+      .main .recommended div a {
+        display: block;
+        width: 100%;
+        height: 100%; }
+      .main .recommended div:nth-child(1) {
+        width: 425px;
+        height: 400px;
+        margin-right: 20px; }
+      .main .recommended div:nth-child(2) {
+        width: 665px;
+        height: 408px; }
+      .main .recommended div:nth-child(3) {
+        width: 425px;
+        height: 620px;
+        margin-right: 20px; }
+        .main .recommended div:nth-child(3) a {
+          box-sizing: border-box;
+          float: left; }
+          .main .recommended div:nth-child(3) a:nth-child(1) {
+            width: 100%;
+            height: 140px; }
+          .main .recommended div:nth-child(3) a:nth-child(2) {
+            width: 212px;
+            height: 240px; }
+          .main .recommended div:nth-child(3) a:nth-child(3) {
+            width: 210px;
+            height: 240px; }
+          .main .recommended div:nth-child(3) a:nth-child(4) {
+            width: 210px;
+            height: 240px; }
+          .main .recommended div:nth-child(3) a:nth-child(5) {
+            width: 210px;
+            height: 240px; }
+      .main .recommended div:nth-child(4) {
+        width: 310px;
+        height: 620px;
+        margin-right: 20px; }
+      .main .recommended div:nth-child(5) {
+        width: 340px;
+        height: 620px; }
+  .main .category {
+    width: 1154px;
+    height: 302px;
+    margin: 0 auto 40px;
+    background: url(../images/champion分类.jpg) no-repeat; }
+    .main .category a {
+      display: inline-block;
+      width: 16%;
+      height: 100%; }
+  .main .featured {
+    width: 1169px;
+    height: 669px;
+    background: url(../images/champion精选系列.jpg) no-repeat;
+    margin: 0 auto; }
+    .main .featured div {
+      width: 100%;
+      border: 1px solid rebeccapurple;
+      height: 150px; }
+    .main .featured a {
+      display: inline-block;
+      height: 519px;
+      margin: 0 15px;
+      width: 260px; }
+      .main .featured a:nth-child(2) {
+        margin-left: 0; }
+      .main .featured a:last-child {
+        margin-right: 0;
+        margin-left: 25px; }
+
+footer .customerService {
+  padding: 95px 0 15px 0;
+  border-top: 1px solid #dadada; }
+  footer .customerService ul {
+    width: 1250px;
+    margin: 0 auto; }
+    footer .customerService ul::after {
       content: "";
       height: 0;
       clear: both;
       display: block;
       overflow: hidden;
       visibility: hidden; }
-    .play ul li {
-      width: 800px;
-      height: 400px;
-      position: absolute; }
-      .play ul li img {
-        width: 100%;
-        height: 400px; }
+    footer .customerService ul li {
+      width: 620px;
+      height: 216px;
+      float: left; }
+      footer .customerService ul li span {
+        font-size: 64px; }
+      footer .customerService ul li div p {
+        text-align: center;
+        color: #777;
+        font-size: 14px;
+        line-height: 28px;
+        height: 28px; }
+
+footer .about {
+  background-color: #004290;
+  box-sizing: border-box;
+  padding: 30px 0; }
+  footer .about div {
+    width: 1280px;
+    margin: 0 auto; }
+    footer .about div img {
+      display: block;
+      margin: 0 auto; }
+    footer .about div ul {
+      width: 840px;
+      margin: 20px auto; }
+      footer .about div ul::after {
+        content: "";
+        height: 0;
+        clear: both;
+        display: block;
+        overflow: hidden;
+        visibility: hidden; }
+      footer .about div ul li {
+        width: 120px;
+        float: left;
+        color: #fff;
+        font-size: 14px;
+        height: 14px;
+        text-align: center; }
+    footer .about div ol {
+      width: 120px;
+      margin: 0 auto; }
+      footer .about div ol::after {
+        content: "";
+        height: 0;
+        clear: both;
+        display: block;
+        overflow: hidden;
+        visibility: hidden; }
+      footer .about div ol li {
+        width: 40px;
+        text-align: center;
+        float: left; }
+        footer .about div ol li a {
+          text-decoration: none;
+          color: #ED3838; }
