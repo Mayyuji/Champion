@@ -1,0 +1,100 @@
+@import "public";
+
+body {
+    background: url(../images/timg.jpg);
+    background-size: cover;
+    z-index: -2;
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: inherit;
+        filter: blur(3px);
+        z-index: -1;
+    }
+
+}
+
+.panel {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translateX(-50%)translateY(-50%);
+    width: 500px;
+    border: 1px solid red;
+    background-color: #fff;
+
+    .panel-heading {
+        padding: 20px 0 20px;
+
+        .panel-title {
+            font-weight: bold;
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+
+    .panel-body {
+        padding: 20px 30px;
+
+        input {
+            border-radius: 0;
+        }
+
+        .col-sm-9 {
+            padding-left: 0;
+        }
+
+        .col-sm-3 {
+            margin: 10px 0;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .btn-default {
+            padding: 10px 0;
+            color: #fff;
+            border-radius: 0;
+            background-color: #282828;
+            outline: none;
+
+            &:hover {
+                color: #fff;
+                background-color: #4F4F4F;
+                border-color: #4F4F4F;
+            }
+
+        }
+
+
+        .box {
+            display: flex;
+            align-items: center;
+
+            .line {
+                border-top: 1px solid #ccc;
+                flex-grow: 1;
+            }
+
+            .text {
+                margin: 0 10px;
+                font-size: 16px;
+                padding: 0 8px;
+            }
+        }
+
+        .btn-block {
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #282828;
+            border-radius: 0;
+        }
+    }
+
+}
