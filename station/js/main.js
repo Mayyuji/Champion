@@ -1,14 +1,8 @@
-console.log("加载完成");
-/* 
-    配置当前项目引入的模块
-*/
 require.config({
     paths: {
         "jquery": "jquery-1.10.1.min",
         "jquery-cookie": "jquery.cookie",
-        "parabola": "parabola",
-        //引入banner图效果
-        "banner": "banner",
+        "index": "index"
     },
     shim: {
         //设置依赖关系  先引入jquery.js  然后在隐去jquery-cookie
@@ -20,6 +14,8 @@ require.config({
     }
 })
 
-require(["banner"], function (banner) {
-    banner.move();
-})
+require(["index"], function (index) {
+    index.ceiling();
+    index.download();
+});
+console.log("加载.....");

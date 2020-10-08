@@ -163,7 +163,10 @@ header {
 
 .head {
   text-align: center;
-  height: 147px; }
+  height: 147px;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #e7e7e7; }
   .head h1 {
     display: block;
     margin: 0 auto;
@@ -218,6 +221,8 @@ header {
             width: 100%;
             font-size: 14px;
             text-align: left; }
+      .head nav li #userlogin {
+        color: #000; }
 
 .swiper-container,
 .swiper-wrapper,
@@ -313,7 +318,6 @@ header {
     margin: 0 auto; }
     .main .featured div {
       width: 100%;
-      border: 1px solid rebeccapurple;
       height: 150px; }
     .main .featured a {
       display: inline-block;
@@ -325,6 +329,25 @@ header {
       .main .featured a:last-child {
         margin-right: 0;
         margin-left: 25px; }
+  .main .goods-c {
+    border: 1px solid red; }
+    .main .goods-c ol {
+      margin: 20px 0 40px; }
+      .main .goods-c ol::after {
+        content: "";
+        height: 0;
+        clear: both;
+        display: block;
+        overflow: hidden;
+        visibility: hidden; }
+      .main .goods-c ol li {
+        color: #777777;
+        font-size: 18px;
+        float: left; }
+        .main .goods-c ol li:first-child {
+          margin-right: 17px; }
+        .main .goods-c ol li span {
+          margin: 0 17px; }
 
 footer .customerService {
   padding: 95px 0 15px 0;
