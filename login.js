@@ -1,5 +1,8 @@
 define(['jquery', "jquery-cookie"], function ($) {
+
+
     function loginSend() {
+
         $("#register").click(function () {
             $.ajax({
                 type: "post",

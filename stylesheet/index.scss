@@ -55,6 +55,9 @@ header {
 .head {
     text-align: center;
     height: 147px;
+    background-color: #fff;
+    width: 100%;
+    border-bottom: 1px solid rgb(231, 231, 231);
 
     h1 {
         display: block;
@@ -116,11 +119,16 @@ header {
                 }
 
             }
+
+            #userlogin {
+                color: #000;
+            }
         }
 
 
     }
 }
+
 
 .swiper-container,
 .swiper-wrapper,
@@ -251,7 +259,6 @@ header {
 
         div {
             width: 100%;
-            border: 1px solid rebeccapurple;
             height: 150px;
         }
 
@@ -272,6 +279,31 @@ header {
         }
 
 
+    }
+
+    .goods-c {
+        border: 1px solid red;
+
+
+        ol {
+            @include clearBoth;
+            margin: 20px 0 40px;
+
+            li {
+                color: #777777;
+                font-size: 18px;
+                float: left;
+
+                &:first-child {
+                    margin-right: 17px;
+                }
+
+                span {
+                    margin: 0 17px;
+                }
+
+            }
+        }
     }
 }
 
