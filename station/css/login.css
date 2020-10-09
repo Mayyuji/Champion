@@ -158,6 +158,12 @@ body {
       font-size: 24px; }
   .panel .panel-body {
     padding: 20px 30px; }
+    .panel .panel-body .alert-danger {
+      display: none; }
+      .panel .panel-body .alert-danger span {
+        padding-right: 10px;
+        font-size: 20px;
+        vertical-align: middle; }
     .panel .panel-body input {
       border-radius: 0; }
     .panel .panel-body .col-sm-9 {

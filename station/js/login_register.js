@@ -13,7 +13,14 @@ define(['jquery', "jquery-cookie"], function ($) {
                     rpassword: $("#rpassword").val(),
                 },
                 success: function (result) {
-                    console.log(result);
+                    if(JSON.parse(result).code){
+                        var str=`<span>X</span>${JSON.parse(result).msg}&nbsp;;&nbsp;&nbsp;
+                  返回码:${JSON.parse(result).code}
+                   `
+                   $(".alert-danger").html(str).css({'display':'block'});
+                   }else{
+                       $(window).attr('location','login.html');
+                   }
                 },
                 error: function (e) {
                     console.log(e);
@@ -33,7 +40,15 @@ define(['jquery', "jquery-cookie"], function ($) {
                     password: $("#password").val()
                 },
                 success: function (result) {
-                    console.log(result);
+                    if(JSON.parse(result).code){
+                         var str=`<span>X</span>${JSON.parse(result).msg}&nbsp;;&nbsp;&nbsp;
+                   返回码:${JSON.parse(result).code}
+                    `
+                    $(".alert-danger").html(str).css({'display':'block'});
+                    }else{
+                        $(window).attr('location','index.html');
+                    }
+                   
                 },
                 error: function (e) {
                     console.log(e);
@@ -42,8 +57,20 @@ define(['jquery', "jquery-cookie"], function ($) {
             })
         })
     }
+    function clearInput(){
+        var dis=$(".alert-danger").css('display')
+         if(dis='block'){
+            $("input").focus(function(){
+                $(".alert-danger").css({
+                    'display':'none'
+                });
+                $("input").val('');
+            })
+         }
+    }
     return {
         register: register,
         Login: Login,
+        clearInput:clearInput,
     }
 });
