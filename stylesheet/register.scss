@@ -41,6 +41,16 @@ body {
     .panel-body {
         padding: 20px 30px;
 
+        .alert-danger {
+            display: none;
+
+            span {
+                padding-right: 10px;
+                font-size: 20px;
+                vertical-align: middle;
+            }
+        }
+
         input {
             border-radius: 0;
         }
