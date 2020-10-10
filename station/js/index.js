@@ -74,10 +74,13 @@ define(['jquery', "jquery-cookie"], function ($) {
             str += `
             <li class="goods_item">
           <div class="goods_pic">
+          <a href="ProductDetails.html?product_id=${data[i].id}">
               <img src="${data[i].src}" alt="">
+        </a>
           </div>
+         
           <div class="goods_title">
-              <p>${data[i].title}</p>
+               <a href="ProductDetails.html?product_id=${data[i].id}"><p>${data[i].title}</p></a>
           </div>
           <div class="sc">
             <div>￥${data[i].price}</div>
