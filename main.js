@@ -19,5 +19,6 @@ require(["index"], function (index) {
     index.search();
     index.banner();
     index.download();
+    index.goodsallnum();
 });
 console.log("加载.....");

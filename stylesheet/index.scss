@@ -170,8 +170,27 @@ header {
 
             }
 
-            #userlogin {
+            #userlogin,
+            .shoppingCart {
                 color: #000;
+            }
+
+            .icon-gouwuche {
+                position: relative;
+
+                .goods-allnum {
+                    position: absolute;
+                    background-color: #ED3838;
+                    font-size: 12px;
+                    text-align: center;
+                    min-width: 20px;
+                    line-height: 20px;
+                    min-height: 20px;
+                    color: #fff;
+                    border-radius: 50%;
+                    top: -60%;
+                    left: 65%;
+                }
             }
         }
 

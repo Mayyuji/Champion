@@ -17,5 +17,6 @@ require(['index','prductdetails'],function(index,prductdetails){
     index.search();
     prductdetails.obtain();
     prductdetails.magnifier();
+    prductdetails.goodsallnum();
 })
 console.log("加载完成")

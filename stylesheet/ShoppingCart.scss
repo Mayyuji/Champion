@@ -198,154 +198,134 @@ header {
 }
 
 .main {
-    background-color: #EAE8DF;
-    padding-bottom: 30px;
+    background-color: #fcfcfc;
 
     .main-c {
-        width: 1250px;
+        width: 1280px;
         margin: 0 auto;
-        padding-top: 20px;
+        height: 800px;
 
-        .site {
-            span {
-                padding: 0 10px;
-            }
+        .container-fluid {
+            padding: 40px 0 0;
 
-            color: rgb(129, 129, 129);
-        }
+            .col-sm-7 {
 
-        .details {
-            margin-top: 20px;
-            @include clearBoth;
-
-            .magnifier {
-                z-index: 2;
-                width: 300px;
-                height: 300px;
-                overflow: hidden;
-                position: absolute;
-                top: 30%;
-                left: 50%;
-                display: none;
-
-                img {
-                    width: 986px;
-                    height: 986px;
-                    position: absolute;
-                }
-            }
-
-            .left-pic {
-                position: relative;
-                width: 493px;
-                float: left;
-
-                .mask {
-                    width: 150px;
-                    height: 150px;
-                    position: absolute;
-                    background-color: rgb(151, 151, 151);
-                    top: 0;
-                    left: 0;
-                    opacity: .5;
-                    display: none;
-                }
-
-                img {
-                    width: 493px;
-                    height: 493px;
-                }
-            }
-
-            .right-txt {
-                padding-left: 92px;
-                float: left;
-                font-size: 18px;
-
-                .title {
-                    font-size: 26px;
-                    color: #000;
-                }
-
-                b {
-                    line-height: 50px;
-                    color: #dc9814;
-                }
-
-                .origin {
-                    margin: 10px 0 20px;
-                    color: #777;
-                }
-
-                .panel {
+                .panel,
+                .panel-default {
+                    border: none;
+                    box-shadow: none;
                     background-color: transparent;
-                    margin-bottom: 0;
-                    border-radius: 0;
+
+                    .panel-heading {
+                        border: none;
+                        background-color: transparent;
+
+                        .panel-title {
+                            font-size: 24px;
+                        }
+                    }
 
                     .panel-body {
-                        padding: 10px 0;
-                    }
-                }
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: 1px solid #eee;
+                        padding: 10px;
 
-                .form-group {
-                    .col-sm-3 {
-                        margin-top: 4px;
-                    }
+                        .minpic {
+                            padding: 6px 20px;
 
-                    .col-sm-9 {
-                        .btn {
-                            background-color: transparent;
-
-                        }
-                    }
-
-                    .col-sm-8 {
-                        .pull-right {
-                            .number-l {
-                                float: left;
-                                display: block;
-                                border: 8px solid transparent;
-                                border-right-color: #000;
-                                margin: 4px 10px 0 10px;
-
-                            }
-
-                            .number {
-                                margin: 0 10px;
-                            }
-
-                            .number-a {
-                                float: right;
-                                display: block;
-                                border: 8px solid transparent;
-                                border-left-color: #000;
-                                margin: 4px 10px 0 10px;
+                            img {
+                                width: 74px;
+                                height: 74px;
                             }
                         }
 
+                        .goodstxt {
+                            flex: 1;
+
+                            .goodstxt-title {
+                                font-size: 18px;
+                                margin-bottom: 6px;
+
+                                span {
+                                    float: right;
+                                }
+                            }
+
+                            .price {
+                                color: #777;
+                                font-size: 15px;
+                                padding-bottom: 6px;
+                            }
+
+                            .quantityControl {
+                                @include clearBoth;
+
+                                .fl {
+                                    float: left;
+
+                                    span {
+                                        float: left;
+                                        font-weight: bold;
+                                    }
+
+                                    .number-l {
+                                        display: block;
+                                        border: 6px solid transparent;
+                                        border-right-color: #000;
+                                        margin: 4px 4px 0;
+
+                                    }
+
+                                    .number {
+                                        font-weight: bold;
+                                        margin: 0 10px;
+                                    }
+
+                                    .number-a {
+                                        display: block;
+                                        border: 6px solid transparent;
+                                        border-left-color: #000;
+                                        margin: 4px 4px 0;
+                                    }
+                                }
+
+                                .fr {
+                                    float: right;
+                                    color: #383838;
+                                    font-size: 16px;
+
+                                }
+
+                            }
+                        }
                     }
-
-                    margin-bottom: 0;
                 }
+            }
 
-                .btn-car {
-                    width: 100%;
-                    color: #fff;
-                    background-color: #333;
-                }
+            .col-sm-5 {
 
-                .share {
-                    margin-top: 50px;
+                .panel,
+                .panel-default {
                     border: none;
+                    box-shadow: none;
+                    background-color: transparent;
+                    margin-left: 20px;
 
-                    a {
-                        padding: 10px 10px;
+                    .panel-heading {
+                        border: none;
+                        background-color: transparent;
+
+                        .panel-title {
+                            font-size: 24px;
+                        }
                     }
                 }
             }
         }
     }
 }
+
 
 footer {
     .customerService {
