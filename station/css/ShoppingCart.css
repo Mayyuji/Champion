@@ -275,102 +275,102 @@ header {
           left: 65%; }
 
 .main {
-  background-color: #EAE8DF;
-  padding-bottom: 30px; }
+  background-color: #fcfcfc; }
   .main .main-c {
-    width: 1250px;
+    width: 1280px;
     margin: 0 auto;
-    padding-top: 20px; }
-    .main .main-c .site {
-      color: #818181; }
-      .main .main-c .site span {
-        padding: 0 10px; }
-    .main .main-c .details {
-      margin-top: 20px; }
-      .main .main-c .details::after {
-        content: "";
-        height: 0;
-        clear: both;
-        display: block;
-        overflow: hidden;
-        visibility: hidden; }
-      .main .main-c .details .magnifier {
-        z-index: 2;
-        width: 300px;
-        height: 300px;
-        overflow: hidden;
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        display: none; }
-        .main .main-c .details .magnifier img {
-          width: 986px;
-          height: 986px;
-          position: absolute; }
-      .main .main-c .details .left-pic {
-        position: relative;
-        width: 493px;
-        float: left; }
-        .main .main-c .details .left-pic .mask {
-          width: 150px;
-          height: 150px;
-          position: absolute;
-          background-color: #979797;
-          top: 0;
-          left: 0;
-          opacity: .5;
-          display: none; }
-        .main .main-c .details .left-pic img {
-          width: 493px;
-          height: 493px; }
-      .main .main-c .details .right-txt {
-        padding-left: 92px;
-        float: left;
-        font-size: 18px; }
-        .main .main-c .details .right-txt .title {
-          font-size: 26px;
-          color: #000; }
-        .main .main-c .details .right-txt b {
-          line-height: 50px;
-          color: #dc9814; }
-        .main .main-c .details .right-txt .origin {
-          margin: 10px 0 20px;
-          color: #777; }
-        .main .main-c .details .right-txt .panel {
-          background-color: transparent;
-          margin-bottom: 0;
-          border-radius: 0; }
-          .main .main-c .details .right-txt .panel .panel-body {
-            padding: 10px 0; }
-        .main .main-c .details .right-txt .form-group {
-          margin-bottom: 0; }
-          .main .main-c .details .right-txt .form-group .col-sm-3 {
-            margin-top: 4px; }
-          .main .main-c .details .right-txt .form-group .col-sm-9 .btn {
-            background-color: transparent; }
-          .main .main-c .details .right-txt .form-group .col-sm-8 .pull-right .number-l {
-            float: left;
-            display: block;
-            border: 8px solid transparent;
-            border-right-color: #000;
-            margin: 4px 10px 0 10px; }
-          .main .main-c .details .right-txt .form-group .col-sm-8 .pull-right .number {
-            margin: 0 10px; }
-          .main .main-c .details .right-txt .form-group .col-sm-8 .pull-right .number-a {
-            float: right;
-            display: block;
-            border: 8px solid transparent;
-            border-left-color: #000;
-            margin: 4px 10px 0 10px; }
-        .main .main-c .details .right-txt .btn-car {
-          width: 100%;
-          color: #fff;
-          background-color: #333; }
-        .main .main-c .details .right-txt .share {
-          margin-top: 50px;
-          border: none; }
-          .main .main-c .details .right-txt .share a {
-            padding: 10px 10px; }
+    height: 800px; }
+    .main .main-c .container-fluid {
+      padding: 40px 0 0; }
+      .main .main-c .container-fluid .col-sm-7 .panel,
+      .main .main-c .container-fluid .col-sm-7 .panel-default {
+        border: none;
+        box-shadow: none;
+        background-color: transparent; }
+        .main .main-c .container-fluid .col-sm-7 .panel .panel-heading,
+        .main .main-c .container-fluid .col-sm-7 .panel-default .panel-heading {
+          border: none;
+          background-color: transparent; }
+          .main .main-c .container-fluid .col-sm-7 .panel .panel-heading .panel-title,
+          .main .main-c .container-fluid .col-sm-7 .panel-default .panel-heading .panel-title {
+            font-size: 24px; }
+        .main .main-c .container-fluid .col-sm-7 .panel .panel-body,
+        .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #eee;
+          padding: 10px; }
+          .main .main-c .container-fluid .col-sm-7 .panel .panel-body .minpic,
+          .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .minpic {
+            padding: 6px 20px; }
+            .main .main-c .container-fluid .col-sm-7 .panel .panel-body .minpic img,
+            .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .minpic img {
+              width: 74px;
+              height: 74px; }
+          .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt,
+          .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt {
+            flex: 1; }
+            .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .goodstxt-title,
+            .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .goodstxt-title {
+              font-size: 18px;
+              margin-bottom: 6px; }
+              .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .goodstxt-title span,
+              .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .goodstxt-title span {
+                float: right; }
+            .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .price,
+            .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .price {
+              color: #777;
+              font-size: 15px;
+              padding-bottom: 6px; }
+            .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl::after,
+            .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl::after {
+              content: "";
+              height: 0;
+              clear: both;
+              display: block;
+              overflow: hidden;
+              visibility: hidden; }
+            .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl .fl,
+            .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl .fl {
+              float: left; }
+              .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl .fl span,
+              .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl .fl span {
+                float: left;
+                font-weight: bold; }
+              .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl .fl .number-l,
+              .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl .fl .number-l {
+                display: block;
+                border: 6px solid transparent;
+                border-right-color: #000;
+                margin: 4px 4px 0; }
+              .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl .fl .number,
+              .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl .fl .number {
+                font-weight: bold;
+                margin: 0 10px; }
+              .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl .fl .number-a,
+              .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl .fl .number-a {
+                display: block;
+                border: 6px solid transparent;
+                border-left-color: #000;
+                margin: 4px 4px 0; }
+            .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .quantityControl .fr,
+            .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .quantityControl .fr {
+              float: right;
+              color: #383838;
+              font-size: 16px; }
+      .main .main-c .container-fluid .col-sm-5 .panel,
+      .main .main-c .container-fluid .col-sm-5 .panel-default {
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        margin-left: 20px; }
+        .main .main-c .container-fluid .col-sm-5 .panel .panel-heading,
+        .main .main-c .container-fluid .col-sm-5 .panel-default .panel-heading {
+          border: none;
+          background-color: transparent; }
+          .main .main-c .container-fluid .col-sm-5 .panel .panel-heading .panel-title,
+          .main .main-c .container-fluid .col-sm-5 .panel-default .panel-heading .panel-title {
+            font-size: 24px; }
 
 footer .customerService {
   padding: 65px 0 35px 0;

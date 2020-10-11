@@ -115,66 +115,86 @@ function magnifier(){
 
 }
 
-    // 获取数量 
+    // 更改页面商品数量
     $(".main-c").on("click",".pull-right .number-l",function(){
         var num=$(".pull-right .number").html()
         
         if(num<=1){
-            alert("商品购买数量最小为一件")
+            alert("商品购买数量最少为一件")
             return
         }
         num--;
-        $(".pull-right .number").html(num);
+        $(".pull-right .number").html(Number(num));
     }).on("click",".pull-right .number-a",function(){
         var num=$(".pull-right .number").html()
         num++;
-        $(".pull-right .number").html(num);
+        $(".pull-right .number").html(Number(num));
     });
-    // 添加购物车操作
+
+
+    // 添加购物车操作cookie
     $(".main-c").on("click", ".btn-car", function(){
-        var id = $(this).id;
+        var id = this.id;
         var first = $.cookie("goods") == null ? true : false;
 
-        //如果是第一次添加
         if(first){
-            //直接创建cookie
             var cookieStr = `[{"id":${id},"num":${$(".pull-right .number").html()}}]`;
             $.cookie("goods", cookieStr, {
                 expires: 7
             })
         }else{
-            var same = false; //假设没有添加过
-            //3、如果不是第一次添加，判断之前是否添加过
+            var same = false; 
             var cookieStr = $.cookie("goods");
             var cookieArr = JSON.parse(cookieStr);
             for(var i = 0; i < cookieArr.length; i++){
                 if(cookieArr[i].id == id){
-                    //如果之前添加过，数量+1
-                    cookieArr[i].num++;
+                    cookieArr[i].num=Number(cookieArr[i].num)+Number($(".pull-right .number").html()) ;
                     same = true;
                     break;
                 }
             }
 
             if(!same){
-                //如果没有添加过，新增商品数据
-                var obj = {id:id, num:$(".pull-right .number").html()};
+                var obj = {id:Number(id) , num:Number($(".pull-right .number").html()) };
                 cookieArr.push(obj);
             }
-
-            //最后，存回cookie中
             $.cookie("goods", JSON.stringify(cookieArr), {
                 expires: 7
             })
         }
-
-        alert($.cookie("goods"));
+        
+        goodsallnum();
     })
+    // 加载购物车总数量
+    function goodsallnum(){
+        
+        let arr=JSON.parse($.cookie("goods"));
+        console.log(arr);
+        let n=0; 
+        if(arr){
+            $(".goods-allnum").css({
+                'display': 'block'
+            })
+            for(let j=0;j<arr.length;j++){
+            n+=arr[j].num;
+        }
+        console.log(n);
+            $(".goods-allnum").html(n);
+        }else{
+            $(".goods-allnum").css({
+                'display': 'none'
+            })
+        }
+        
+        
+    }
+    
 
 
 
 return{
     obtain:obtain,
     magnifier:magnifier,
+    goodsallnum:goodsallnum,
 }
 })

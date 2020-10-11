@@ -96,11 +96,34 @@ define(['jquery', "jquery-cookie"], function ($) {
             }
         })
     }
+    function goodsallnum(){
+        
+        let arr=JSON.parse($.cookie("goods"));
+        console.log(arr);
+        let n=0; 
+        if(arr){
+            $(".goods-allnum").css({
+                'display': 'block'
+            })
+            for(let j=0;j<arr.length;j++){
+            n+=arr[j].num;
+        }
+        console.log(n);
+            $(".goods-allnum").html(n);
+        }else{
+            $(".goods-allnum").css({
+                'display': 'none'
+            })
+        }
+        
+        
+    }
 
     return {
         ceiling: ceiling,
         search:search,
         banner:banner,
         download: download,
+        goodsallnum:goodsallnum,
     }
 });

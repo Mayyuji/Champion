@@ -770,8 +770,23 @@ header {
             .head nav li .container .searchgoods-f .search-list li {
               border-bottom: 1px solid #e4e2e2;
               float: none; }
-      .head nav li #userlogin {
+      .head nav li #userlogin,
+      .head nav li .shoppingCart {
         color: #000; }
+      .head nav li .icon-gouwuche {
+        position: relative; }
+        .head nav li .icon-gouwuche .goods-allnum {
+          position: absolute;
+          background-color: #ED3838;
+          font-size: 12px;
+          text-align: center;
+          min-width: 20px;
+          line-height: 20px;
+          min-height: 20px;
+          color: #fff;
+          border-radius: 50%;
+          top: -60%;
+          left: 65%; }
 
 .swiper-container,
 .swiper-wrapper,
