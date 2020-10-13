@@ -278,8 +278,7 @@ header {
   background-color: #fcfcfc; }
   .main .main-c {
     width: 1280px;
-    margin: 0 auto;
-    height: 800px; }
+    margin: 0 auto; }
     .main .main-c .container-fluid {
       padding: 40px 0 0; }
       .main .main-c .container-fluid .col-sm-7 .panel,
@@ -358,6 +357,12 @@ header {
               float: right;
               color: #383838;
               font-size: 16px; }
+      .main .main-c .container-fluid .col-sm-7 .carselect div {
+        border: 1px solid #5e5e5e;
+        background-color: #fff;
+        border-radius: 0;
+        width: 45%;
+        margin: 0 2.5% 20px; }
       .main .main-c .container-fluid .col-sm-5 .panel,
       .main .main-c .container-fluid .col-sm-5 .panel-default {
         border: none;
@@ -371,6 +376,55 @@ header {
           .main .main-c .container-fluid .col-sm-5 .panel .panel-heading .panel-title,
           .main .main-c .container-fluid .col-sm-5 .panel-default .panel-heading .panel-title {
             font-size: 24px; }
+        .main .main-c .container-fluid .col-sm-5 .panel .couponpanel,
+        .main .main-c .container-fluid .col-sm-5 .panel-default .couponpanel {
+          border: 1px solid #999999;
+          background-color: #FAFAFA;
+          padding: 15px 20px; }
+          .main .main-c .container-fluid .col-sm-5 .panel .couponpanel .number-b,
+          .main .main-c .container-fluid .col-sm-5 .panel-default .couponpanel .number-b {
+            float: right;
+            display: block;
+            border: 6px solid transparent;
+            border-top: 11px solid #000;
+            margin: 4px 4px 0; }
+          .main .main-c .container-fluid .col-sm-5 .panel .couponpanel input,
+          .main .main-c .container-fluid .col-sm-5 .panel-default .couponpanel input {
+            margin-top: 15px;
+            border-radius: 0; }
+          .main .main-c .container-fluid .col-sm-5 .panel .couponpanel .btn-default,
+          .main .main-c .container-fluid .col-sm-5 .panel-default .couponpanel .btn-default {
+            margin: 10px 0;
+            border: 1px solid #a3a3a3;
+            width: 100%;
+            border-radius: 0; }
+        .main .main-c .container-fluid .col-sm-5 .panel .total,
+        .main .main-c .container-fluid .col-sm-5 .panel-default .total {
+          padding: 0 15px; }
+          .main .main-c .container-fluid .col-sm-5 .panel .total .total-f,
+          .main .main-c .container-fluid .col-sm-5 .panel-default .total .total-f {
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            border: 1px solid #999999;
+            background-color: #FAFAFA;
+            padding: 15px 20px 8px; }
+            .main .main-c .container-fluid .col-sm-5 .panel .total .total-f:nth-child(2),
+            .main .main-c .container-fluid .col-sm-5 .panel-default .total .total-f:nth-child(2) {
+              border-top: none;
+              font-size: 18px; }
+            .main .main-c .container-fluid .col-sm-5 .panel .total .total-f .null,
+            .main .main-c .container-fluid .col-sm-5 .panel-default .total .total-f .null {
+              flex: 1; }
+          .main .main-c .container-fluid .col-sm-5 .panel .total .btn-default,
+          .main .main-c .container-fluid .col-sm-5 .panel-default .total .btn-default {
+            margin: 20px 0;
+            border: 1px solid #a3a3a3;
+            width: 100%;
+            color: #fff;
+            height: 40px;
+            background-color: #282828;
+            border-radius: 0; }
 
 footer .customerService {
   padding: 65px 0 35px 0;
