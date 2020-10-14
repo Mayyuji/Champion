@@ -20,5 +20,6 @@ require(["index"], function (index) {
     index.banner();
     index.download();
     index.goodsallnum();
+    index.navlist();
 });
 console.log("加载.....");

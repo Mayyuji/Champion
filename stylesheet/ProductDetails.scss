@@ -88,7 +88,7 @@ header {
 
             &:hover .sub-menu {
                 display: block;
-                z-index: 2;
+                z-index: 9;
             }
 
             span {
@@ -102,20 +102,42 @@ header {
 
             .sub-menu {
                 display: none;
-                margin-top: 20px;
+                z-index: 2;
+                padding-top: 20px;
                 position: absolute;
                 padding: 20px 5px;
                 color: #fff;
-                background-color: #004290;
 
                 ul {
-                    @include clearBoth;
+                    background-color: #90e0ef;
+                    padding: 10px 0;
                     width: 248px;
+                    border-radius: 4px;
+                    @include clearBoth;
 
                     li {
                         width: 100%;
                         font-size: 14px;
                         text-align: left;
+                        float: left;
+
+                        span {
+                            float: left;
+                            padding-left: 20px;
+                            height: 25px;
+                            font-size: 14px;
+                            line-height: 25px;
+                        }
+
+                        img {
+                            overflow: hidden;
+                            border-radius: 5px;
+                            background-color: #fff;
+                            width: 25px;
+                            height: 25px;
+                            display: block;
+                            float: left;
+                        }
                     }
                 }
 

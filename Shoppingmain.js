@@ -16,6 +16,7 @@ require.config({
 require(['index','prductdetails','ShoppingCart'],function(index,prductdetails,ShoppingCart){
     index.ceiling();
     index.search();
+    index.navlist();
     prductdetails.goodsallnum();
     ShoppingCart.loadproduct();
     ShoppingCart.singlenumber();

@@ -169,7 +169,6 @@ function magnifier(){
     function goodsallnum(){
         
         let arr=JSON.parse($.cookie("goods"));
-        console.log(arr);
         let n=0; 
         if(arr){
             $(".goods-allnum").css({
@@ -178,7 +177,6 @@ function magnifier(){
             for(let j=0;j<arr.length;j++){
             n+=arr[j].num;
         }
-        console.log(n);
             $(".goods-allnum").html(n);
         }else{
             $(".goods-allnum").css({
