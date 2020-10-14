@@ -709,7 +709,7 @@ header {
         color: #535353; }
       .head nav li:hover .sub-menu {
         display: block;
-        z-index: 2; }
+        z-index: 9; }
       .head nav li span {
         padding: 0 10px;
         font-size: 24px; }
@@ -717,13 +717,16 @@ header {
           color: #aaa; }
       .head nav li .sub-menu {
         display: none;
-        margin-top: 20px;
+        z-index: 2;
+        padding-top: 20px;
         position: absolute;
         padding: 20px 5px;
-        color: #fff;
-        background-color: #004290; }
+        color: #fff; }
         .head nav li .sub-menu ul {
-          width: 248px; }
+          background-color: #90e0ef;
+          padding: 10px 0;
+          width: 248px;
+          border-radius: 4px; }
           .head nav li .sub-menu ul::after {
             content: "";
             height: 0;
@@ -734,7 +737,22 @@ header {
           .head nav li .sub-menu ul li {
             width: 100%;
             font-size: 14px;
-            text-align: left; }
+            text-align: left;
+            float: left; }
+            .head nav li .sub-menu ul li span {
+              float: left;
+              padding-left: 20px;
+              height: 25px;
+              font-size: 14px;
+              line-height: 25px; }
+            .head nav li .sub-menu ul li img {
+              overflow: hidden;
+              border-radius: 5px;
+              background-color: #fff;
+              width: 25px;
+              height: 25px;
+              display: block;
+              float: left; }
       .head nav li .container {
         display: none;
         height: 97px;

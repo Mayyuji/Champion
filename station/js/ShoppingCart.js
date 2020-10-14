@@ -175,6 +175,7 @@ function toSettle(){
     $(".container-fluid").on("click","#to-settle",function(){
         var oldprice=Number($(".Totalprice").html());
         var subtotalprice= Repeatmethod();
+        $(window).scrollTop(0);
         if(subtotalprice!=oldprice){
             $(".message").text("请先更新购物车")
             $("#alert").css({

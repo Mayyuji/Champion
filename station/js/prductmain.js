@@ -15,6 +15,7 @@ require.config({
 require(['index','prductdetails'],function(index,prductdetails){
     index.ceiling();
     index.search();
+    index.navlist();
     prductdetails.obtain();
     prductdetails.magnifier();
     prductdetails.goodsallnum();
