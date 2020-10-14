@@ -21,5 +21,7 @@ require(['index','prductdetails','ShoppingCart'],function(index,prductdetails,Sh
     ShoppingCart.singlenumber();
     ShoppingCart.settlement();
     ShoppingCart.updateData();
+    ShoppingCart.coupon();
+    ShoppingCart.toSettle();
 })
 console.log("加载完成")

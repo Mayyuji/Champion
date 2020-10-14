@@ -103,7 +103,8 @@ function singlenumber(){
             let arr=JSON.parse($.cookie("goods"));
             for(let i=0;i<arr.length;i++){
                 $(".goods").on("click","#goodid"+arr[i].id+" .deleteCurrent",function(){
-                    var bl=confirm($(".goodstxt-title").text())
+                    let str=CTim($(".goodstxt-title").text());
+                    var bl=confirm("确定删除:   "+str.slice(0,str.length-1)+"   吗?")
                     if(bl){
                          if(arr.length==1){
                             $.cookie("goods",null);
@@ -126,29 +127,81 @@ function singlenumber(){
             loadproduct(); 
         }
     }
+function coupon() {
+    $(".couponpanel-mask").click(function(){
+        if($(".couponpanel").height()==18){
+            $(".couponpanel").animate({height:'160px'},700);
+            $(".number-b ").css({
+                transform: 'rotate(0deg)',
+                transition: 'all .7s linear',
+
+            })
+            
+        }else{
+            $(".number-b ").css({
+                transform: 'rotate(90deg)',
+                transition: 'all .7s linear',
+
+            })
+            $(".couponpanel").animate({height:'50px'},700);
+        }
+        
+    })
+}
 
 function updateData(){
-    let subtotalprice;
+    // 更新数据
     $(".col-sm-7").on("click",".updateData",function(){
-        let str=CTim($(".fr").text());
-        let arr=str.substring(1,str.length).split('￥')
-        var subtotalprice=0;
-        for(let i=0;i<arr.length;i++){
-            subtotalprice+=Number(arr[i]);
-        }
-        console.log(subtotalprice);
-$(".Totalprice").text(subtotalprice);
+        var subtotalprice= Repeatmethod();
+        $(".Totalprice").text(subtotalprice);
     })
-    console.log(subtotalprice);
+}
+// 重复函数
+function Repeatmethod(){
+    let str=CTim($(".fr").text());
+    let arr=str.substring(1,str.length).split('￥')
+    var subtotalprice=0;
+    for(let i=0;i<arr.length;i++){
+        subtotalprice+=Number(arr[i]);
+    }
+    return subtotalprice;
 }
 // 去空格函数
 function CTim(str) { 
     return str.replace(/\s/g,''); 
+}
+
+function toSettle(){
+    $(".container-fluid").on("click","#to-settle",function(){
+        var oldprice=Number($(".Totalprice").html());
+        var subtotalprice= Repeatmethod();
+        if(subtotalprice!=oldprice){
+            $(".message").text("请先更新购物车")
+            $("#alert").css({
+                display: 'block'
+            })
+        }else{
+            $(".message").text("￥ -"+oldprice)
+            $("#alert").css({
+                display: 'block'
+            })
+        }
+    })
+    $("#alert").click(function(){
+        $("#alert").css("display","none")
+    })
+    $(document).scroll(function() {
+        if($("#alert").css("display")=="block"){
+            $(window).scrollTop(0);
+        }
+    })
 }
     return {
     loadproduct:loadproduct,
     singlenumber:singlenumber,
     settlement:settlement,
     updateData:updateData,
+    coupon:coupon,
+    toSettle:toSettle,
     }
 })

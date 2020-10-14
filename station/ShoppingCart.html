@@ -148,21 +148,22 @@
                                 <label for="exampleInputEmail1">输入优惠券</label>
                                 <input type="email" class="form-control" id="coupon" placeholder="优惠券码">
                                 <button type="button" class="btn btn-default">使用优惠券</button>
+                                <div class="couponpanel-mask"></div>
                             </div>
                         </div>
                         <div class="panel-body total">
                             <div class="total-f">
                                 <p>小计</p>
                                 <div class="null"></div>
-                                <p><span>￥</span><span class="Totalprice">123123</span></p>
+                                <p><span>￥</span><span class="Totalprice">0</span></p>
                             </div>
 
                             <div class="total-f">
                                 <p>合计</p>
                                 <div class="null"></div>
-                                <p><span>￥</span><span class="Totalprice">123123</span></p>
+                                <p><span>￥</span><span class="Totalprice">0</span></p>
                             </div>
-                            <button type="button" class="btn btn-default">去结算</button>
+                            <button type="button" class="btn btn-default" id="to-settle">去结算</button>
                         </div>
                     </div>
                 </div>
@@ -221,3 +222,8 @@
             </section>
         </footer>
 </body>
+<div id="alert">
+    <div class="message"></div>
+</div>
+
+</html>
