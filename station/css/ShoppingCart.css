@@ -276,7 +276,11 @@ header {
               float: none; }
       .head nav li #userlogin,
       .head nav li .shoppingCart {
-        color: #000; }
+        color: #000;
+        text-decoration: none; }
+      .head nav li .icon-xiaoren span {
+        text-decoration: none;
+        font-size: 14px; }
       .head nav li .icon-gouwuche {
         position: relative; }
         .head nav li .icon-gouwuche .goods-allnum {
@@ -331,6 +335,9 @@ header {
             .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .goodstxt-title {
               font-size: 18px;
               margin-bottom: 6px; }
+              .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .goodstxt-title a,
+              .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .goodstxt-title a {
+                text-decoration: none; }
               .main .main-c .container-fluid .col-sm-7 .panel .panel-body .goodstxt .goodstxt-title span,
               .main .main-c .container-fluid .col-sm-7 .panel-default .panel-body .goodstxt .goodstxt-title span {
                 float: right; }
@@ -381,6 +388,11 @@ header {
         border-radius: 0;
         width: 45%;
         margin: 0 2.5% 20px; }
+        .main .main-c .container-fluid .col-sm-7 .carselect div a {
+          color: seagreen;
+          display: block;
+          width: 100%;
+          height: 100%; }
       .main .main-c .container-fluid .col-sm-5 .panel,
       .main .main-c .container-fluid .col-sm-5 .panel-default {
         border: none;

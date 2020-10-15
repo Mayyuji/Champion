@@ -46,15 +46,22 @@ define(['jquery', "jquery-cookie"], function ($) {
                     `
                     $(".alert-danger").html(str).css({'display':'block'});
                     }else{
+                        //用户登录获得名字
+                        $.cookie("users",null);
+                        $.cookie("users", $("#username").val(), {
+                        expires: 7
+                        })
                         $(window).attr('location','index.html');
                     }
                    
                 },
                 error: function (e) {
                     console.log(e);
+                    
                 }
 
             })
+           
         })
     }
     function clearInput(){
@@ -64,7 +71,7 @@ define(['jquery', "jquery-cookie"], function ($) {
                 $(".alert-danger").css({
                     'display':'none'
                 });
-                $("input").val('');
+                // $("input").val('');
             })
          }
     }
