@@ -86,12 +86,19 @@ function getid(search,goodsid){
     }
 }
 function magnifier(){
-    $(".main-c").on("mouseover",".left-pic",function(){
+    $(".main-c").on("mouseenter",".left-pic",function(){
+        $(".details .magnifier").css({
+            top: 290+$(window).scrollTop(),
+        })
+        console.log( $(window).scrollTop());
         $(".left-pic .mask,.magnifier").css({
             'display':'block',
         })
     });
     $(".main-c").on("mousemove",".left-pic",function(e){
+        $(".details .magnifier").css({
+            top: 290+$(window).scrollTop(),
+        })
             var l=parseInt( e.pageX-$(this).offset().left-75);
             var y=parseInt(e.pageY-$(this).offset().top-75);
             l = Math.max(0, l);
@@ -133,7 +140,35 @@ function magnifier(){
 
 
     // 添加购物车操作cookie
-    $(".main-c").on("click", ".btn-car", function(){
+    $(".main-c").on("click", ".btn-car", function(e){ 
+        if(!$.cookie("users")){
+            $(window).attr('location','login.html');
+            return;
+        } 
+        //获得落点坐标
+        var l=parseInt($(".icon-gouwuche").offset().left);
+        var y=parseInt($(".icon-gouwuche").offset().top);
+        if ($('.qiu')[0]) {
+            return;
+        }
+        var div = $('<div class="qiu"></div>');
+        div.css({
+            width: 50,
+            height: 50,
+            left: e.pageX - 25,
+            top: e.pageY - 25,
+            background: `url(${$(".magnifier img").attr("src")})`,// 获取添加图片
+            backgroundSize: '100% 100%'
+        });
+        $('body').append(div);
+        $(".qiu").animate({
+            left: l,
+            top: y,
+        },600,function () {
+            $('.qiu').remove();
+            goodsallnum();
+        })
+
         var id = this.id;
         var first = $.cookie("goods") == null ? true : false;
 
@@ -161,9 +196,7 @@ function magnifier(){
             $.cookie("goods", JSON.stringify(cookieArr), {
                 expires: 7
             })
-        }
-        
-        goodsallnum();
+        }   
     })
     // 加载购物车总数量
     function goodsallnum(){
@@ -183,7 +216,9 @@ function magnifier(){
                 'display': 'none'
             })
         }
-        
+        if($.cookie("users")){
+            $(".icon-xiaoren span").text($.cookie("users").replace(/\"/g,""));
+        }
         
     }
     

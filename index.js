@@ -65,12 +65,12 @@ define(['jquery', "jquery-cookie"], function ($) {
         })
     }
 function navlist(){
-     function load(k){
+     function load(k,l){
         $.ajax({
         url: "../data/navlist.json",
         success: function (data) {
             var str = ``;
-        for (var i = 0; i < k; i++) {
+        for (var i = k; i < l; i++) {
         str += `
         <li><img src="${data[i].src}" alt="${data[i].title}"><span>${data[i].title}</span></li>
         `
@@ -84,12 +84,13 @@ function navlist(){
      }
     $("nav").on("mouseenter","li",function(){
         var node=$(this).attr("id");
-        if(node=="man"||node=="women"){
-         load(9);
+        if(node=="man"){
+         load(0,9);
+        }else if(node=="women"){
+            load(9,18);
+        }else if(node=="children"){
+            load(18,22);
         }
-        if(node=="children"){
-            load(4);
-           }
     })
       
 }
@@ -140,6 +141,9 @@ function navlist(){
             $(".goods-allnum").css({
                 'display': 'none'
             })
+        }
+        if($.cookie("users")){
+            $(".icon-xiaoren span").text($.cookie("users").replace(/\"/g,""));
         }
         
         

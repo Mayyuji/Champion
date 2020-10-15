@@ -45,6 +45,14 @@ gulp.task("images", function () {
         .pipe(gulp.dest("station/images"))
         .pipe(connect.reload());
 })
+// php
+gulp.task("PHP", function () {
+    return gulp.src("php/*.php")
+        .pipe(gulp.dest("station/php"))
+        .pipe(connect.reload());
+})
+
+
 gulp.task("build", ["scss", "images", "data", "html", "script", ], function () {
     console.log("success")
 })
@@ -56,6 +64,7 @@ gulp.task("watch", function () {
     gulp.watch("*.html", ["html"])
     gulp.watch("*.json", ["data"])
     gulp.watch("images/**/*", ["images"])
+    gulp.watch("php/*.php", ["PHP"])
 })
 // 服务
 const connect = require("gulp-connect");

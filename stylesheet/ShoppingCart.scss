@@ -194,6 +194,12 @@ header {
             #userlogin,
             .shoppingCart {
                 color: #000;
+                text-decoration: none;
+            }
+
+            .icon-xiaoren span {
+                text-decoration: none;
+                font-size: 14px;
             }
 
             .icon-gouwuche {
@@ -268,6 +274,10 @@ header {
                                 font-size: 18px;
                                 margin-bottom: 6px;
 
+                                a {
+                                    text-decoration: none;
+                                }
+
                                 span {
                                     float: right;
                                 }
@@ -330,6 +340,13 @@ header {
                         border-radius: 0;
                         width: 45%;
                         margin: 0 2.5% 20px;
+
+                        a {
+                            color: seagreen;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
 
                 }

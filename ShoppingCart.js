@@ -14,12 +14,13 @@ define(['jquery', "jquery-cookie"], function ($) {
                     var msg=data.find(item=>item.id==arr[i].id);
                      node=$(`<div class="panel-body">
                     <div class="minpic">
-                        <img src="${msg.src}"
-                            alt="${msg.title}">
+                    <a href="ProductDetails.html?product_id=${arr[i].id}">
+                        <img src="${msg.src}" alt="${msg.title}">
+                    </a>  
                     </div>
                     <div class="goodstxt"  id="goodid${arr[i].id}">
                         <p class="goodstxt-title">
-                        ${msg.title}
+                        <a href="ProductDetails.html?product_id=${arr[i].id}">${msg.title} </a>
                             <span class="deleteCurrent">X</span>
                         </p>
                         <div class="price">
@@ -52,7 +53,6 @@ define(['jquery', "jquery-cookie"], function ($) {
             }
         })
     }
-    // console.log($.cookie("goods"));
 }
 
 function singlenumber(){
@@ -79,6 +79,7 @@ function singlenumber(){
                 })
             }
             loadproduct();
+            goodsallnum();
 
         }).on("click","#goodid"+arr[i].id+" .number-a",function(){
             var num=$("#goodid"+arr[i].id+" .number").html()
@@ -94,6 +95,7 @@ function singlenumber(){
                
             }
             loadproduct();
+            goodsallnum();
         });
     }
     }
@@ -103,7 +105,8 @@ function singlenumber(){
             let arr=JSON.parse($.cookie("goods"));
             for(let i=0;i<arr.length;i++){
                 $(".goods").on("click","#goodid"+arr[i].id+" .deleteCurrent",function(){
-                    var bl=confirm($(".goodstxt-title").text())
+                    let str=CTim($("#goodid"+arr[i].id+" .goodstxt-title").text());
+                    var bl=confirm("确定删除:   "+str.slice(0,str.length-1)+"   吗?")
                     if(bl){
                          if(arr.length==1){
                             $.cookie("goods",null);
@@ -118,37 +121,118 @@ function singlenumber(){
                     expires: 7
                     })
                     loadproduct(); 
+                    goodsallnum();
                     }
                    
                 })
             }
         }else{
             loadproduct(); 
+            goodsallnum();
         }
     }
+function coupon() {
+    $(".couponpanel-mask").click(function(){
+        if($(".couponpanel").height()==18){
+            $(".couponpanel").animate({height:'160px'},700);
+            $(".number-b ").css({
+                transform: 'rotate(0deg)',
+                transition: 'all .7s linear',
+
+            })
+            
+        }else{
+            $(".number-b ").css({
+                transform: 'rotate(90deg)',
+                transition: 'all .7s linear',
+
+            })
+            $(".couponpanel").animate({height:'50px'},700);
+        }
+        
+    })
+}
 
 function updateData(){
-    let subtotalprice;
+    // 更新数据
     $(".col-sm-7").on("click",".updateData",function(){
-        let str=CTim($(".fr").text());
-        let arr=str.substring(1,str.length).split('￥')
-        var subtotalprice=0;
-        for(let i=0;i<arr.length;i++){
-            subtotalprice+=Number(arr[i]);
-        }
-        console.log(subtotalprice);
-$(".Totalprice").text(subtotalprice);
+        var subtotalprice= Repeatmethod();
+        $(".Totalprice").text(subtotalprice);
     })
-    console.log(subtotalprice);
+}
+// 重复函数
+function Repeatmethod(){
+    let str=CTim($(".fr").text());
+    let arr=str.substring(1,str.length).split('￥')
+    var subtotalprice=0;
+    for(let i=0;i<arr.length;i++){
+        subtotalprice+=Number(arr[i]);
+    }
+    return subtotalprice;
 }
 // 去空格函数
 function CTim(str) { 
     return str.replace(/\s/g,''); 
+}
+
+function toSettle(){
+    $(".container-fluid").on("click","#to-settle",function(){
+        var oldprice=Number($(".Totalprice").html());
+        var subtotalprice= Repeatmethod();
+        $(window).scrollTop(0);
+        if(subtotalprice!=oldprice){
+            $(".message").text("请先更新购物车")
+            $("#alert").css({
+                display: 'block'
+            })
+        }else{
+            $(".message").text("￥ -"+oldprice)
+            $("#alert").css({
+                display: 'block'
+            })
+            $.cookie("goods",null);
+            loadproduct(); 
+            goodsallnum();
+        }
+    })
+    $("#alert").click(function(){
+        $("#alert").css("display","none")
+        $(".Totalprice").html(0)
+    })
+    $(document).scroll(function() {
+        if($("#alert").css("display")=="block"){
+            $(window).scrollTop(0);
+        }
+    })
+}
+function goodsallnum(){
+        
+    let arr=JSON.parse($.cookie("goods"));
+    let n=0; 
+    if(arr){
+        $(".goods-allnum").css({
+            'display': 'block'
+        })
+        for(let j=0;j<arr.length;j++){
+        n+=arr[j].num;
+    }
+        $(".goods-allnum").html(n);
+    }else{
+        $(".goods-allnum").css({
+            'display': 'none'
+        })
+    }
+    if($.cookie("users")){
+        $(".icon-xiaoren span").text($.cookie("users").replace(/\"/g,""));
+    }
+    
 }
     return {
     loadproduct:loadproduct,
     singlenumber:singlenumber,
     settlement:settlement,
     updateData:updateData,
+    coupon:coupon,
+    toSettle:toSettle,
     }
 })
