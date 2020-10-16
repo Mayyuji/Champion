@@ -21,5 +21,6 @@ require(["index","swiper-bundle.min"], function (index,swiper) {
     index.download();
     index.goodsallnum();
     index.navlist();
+    index.backtotop();
 });
 console.log("加载.....");

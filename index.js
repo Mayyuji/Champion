@@ -152,7 +152,15 @@ function navlist(){
         
         
     }
-
+    function backtotop(){
+       $("#backtop").click(function(){
+            if( parseInt($(window).scrollTop())!=0){
+                $("html").animate({
+                    scrollTop:0,
+                })
+            }
+        })
+    }
     return {
         ceiling: ceiling,
         search:search,
@@ -160,5 +168,6 @@ function navlist(){
         navlist:navlist,
         download: download,
         goodsallnum:goodsallnum,
+        backtotop:backtotop,
     }
 });

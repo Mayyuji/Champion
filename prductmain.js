@@ -16,6 +16,7 @@ require(['index','prductdetails'],function(index,prductdetails){
     index.ceiling();
     index.search();
     index.navlist();
+    index.backtotop();
     prductdetails.obtain();
     prductdetails.magnifier();
     prductdetails.goodsallnum();

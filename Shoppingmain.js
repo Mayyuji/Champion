@@ -17,6 +17,7 @@ require(['index','prductdetails','ShoppingCart'],function(index,prductdetails,Sh
     index.ceiling();
     index.search();
     index.navlist();
+    index.backtotop();
     prductdetails.goodsallnum();
     ShoppingCart.loadproduct();
     ShoppingCart.singlenumber();
