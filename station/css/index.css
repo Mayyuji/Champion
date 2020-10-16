@@ -976,6 +976,9 @@ header {
         .main .goods-c .goods li .sc .sc_btn {
           float: right;
           padding-right: 10px; }
+          .main .goods-c .goods li .sc .sc_btn a {
+            text-decoration: none;
+            color: #111111; }
 
 footer .customerService {
   padding: 65px 0 35px 0;
