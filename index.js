@@ -113,7 +113,11 @@ function navlist(){
           </div>
           <div class="sc">
             <div>￥${data[i].price}</div>
-            <div id="${data[i].id}" class="sc_btn">加入购物车<span class="iconfont icon-gouwuche"></span></div>
+            <div id="${data[i].id}" class="sc_btn">
+            <a href="ProductDetails.html?product_id=${data[i].id}">
+                加入购物车<span class="iconfont icon-gouwuche"></span>
+            </a>
+            </div>
           </div>
             </li>
             `

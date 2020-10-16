@@ -458,6 +458,11 @@ header {
                     .sc_btn {
                         float: right;
                         padding-right: 10px;
+
+                        a {
+                            text-decoration: none;
+                            color: rgb(17, 17, 17);
+                        }
                     }
                 }
             }

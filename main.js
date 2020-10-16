@@ -14,7 +14,7 @@ require.config({
     }
 })
 
-require(["index"], function (index) {
+require(["index","swiper-bundle.min"], function (index,swiper) {
     index.ceiling();
     index.search();
     index.banner();
